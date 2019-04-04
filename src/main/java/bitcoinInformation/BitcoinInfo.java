@@ -13,6 +13,8 @@ public class BitcoinInfo {
 	private String final_balance = "";
 	private ArrayList<Transaction> txs;
 	
+	public BitcoinInfo() {}
+
 	public BitcoinInfo(String address, String n_tx, String total_received, String total_sent, String final_balance,
 			ArrayList<Transaction> txs) {
 		super();

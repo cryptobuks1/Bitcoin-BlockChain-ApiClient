@@ -1,12 +1,12 @@
 package bitcoinInformation;
 
 public class Currency {
-	
+
 	public String n_tx = "";
 	public String total_received = "";
 	public String total_sent = "";
 	public String final_balance = "";
-	
+
 	public Currency(String n_tx, String total_received, String total_sent, String final_balance) {
 		super();
 		this.n_tx = n_tx;
@@ -46,5 +46,5 @@ public class Currency {
 	public void setFinal_balance(String final_balance) {
 		this.final_balance = final_balance;
 	}
-	
+
 }

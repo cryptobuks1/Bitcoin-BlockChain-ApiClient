@@ -1,11 +1,11 @@
 package bitcoinInformation;
 
 public class AddressBitcoin extends Currency {
-	
+
 	String address = "";
 	String change_index = "";
 	String account_index = "";
-	
+
 	public AddressBitcoin(String address, String n_tx, String total_received, String total_sent, String final_balance,
 			String change_index, String account_index) {
 		super(n_tx, total_received, total_sent, final_balance);
@@ -43,6 +43,4 @@ public class AddressBitcoin extends Currency {
 		return "AddressBitcoin [address=" + address + ", change_index=" + change_index + ", account_index="
 				+ account_index + "]";
 	}
-
-	
 }

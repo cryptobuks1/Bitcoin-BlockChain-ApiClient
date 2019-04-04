@@ -95,7 +95,5 @@ public class PreviousOutput {
 		return "PreviousOutput [type=" + type + ", spent=" + spent + ", value=" + value + ", spending_outpoints="
 				+ spending_outpoints + ", script=" + script + ", tx_index=" + tx_index + ", n=" + n + ", addr="
 				+ addr + "]";
-	}
-	
-	
+	}	
 }

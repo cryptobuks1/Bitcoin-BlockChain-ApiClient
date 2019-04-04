@@ -115,7 +115,5 @@ public class Chart {
 		return "Chart [status=" + status + ", name=" + name + ", unit=" + unit + ", period=" + period + ", description="
 				+ description + ", values=" + values + ", list=" + list + "]";
 	}
-	
-	
 
 }

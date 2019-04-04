@@ -51,6 +51,5 @@ public class Input {
 	public String toString() {
 		return "Input [sequence=" + sequence + ", witness=" + witness + ", script=" + script + ", prev_out=" + prev_out
 				+ "]";
-	}	
-	
+	}		
 }

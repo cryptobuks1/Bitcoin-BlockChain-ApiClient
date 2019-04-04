@@ -204,7 +204,6 @@ public class Transaction {
 		this.out = out;
 	}
 
-
 	@Override
 	public String toString() {
 		return "Transaction [hash=" + hash + ", ver=" + ver + ", vin_sz=" + vin_sz + ", vout_sz=" + vout_sz + ", size="
@@ -213,6 +212,4 @@ public class Transaction {
 				+ ", block_index=" + block_index + ", block_height=" + block_height + ", inputs=" + inputs + ", out="
 				+ out + "]";
 	}
-	
-
 }
