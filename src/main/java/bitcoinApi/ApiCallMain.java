@@ -6,13 +6,13 @@ import java.util.LinkedHashMap;
 
 import org.json.simple.parser.ParseException;
 
-import BlockChainInformation.Balance;
-import BlockChainInformation.Block;
-import BlockChainInformation.BlockChainData;
-import BlockChainInformation.Transaction;
-import BlockChainInformation.TransactionData;
-import BlockChainInformation.UnspentOutput;
 import bitcoinInformation.BitcoinInfo;
+import blockChainInformation.Balance;
+import blockChainInformation.Block;
+import blockChainInformation.BlockChainData;
+import blockChainInformation.Transaction;
+import blockChainInformation.TransactionData;
+import blockChainInformation.UnspentOutput;
 import market.ExchangeRates;
 import statistics.Chart;
 import statistics.Statistic;

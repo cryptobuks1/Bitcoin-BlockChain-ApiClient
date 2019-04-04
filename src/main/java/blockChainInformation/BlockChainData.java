@@ -1,4 +1,4 @@
-package BlockChainInformation;
+package blockChainInformation;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package BlockChainInformation;
+package blockChainInformation;
 
 public class SpendingOutpoint {
 	

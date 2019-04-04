@@ -2,7 +2,7 @@ package bitcoinInformation;
 
 import java.util.ArrayList;
 
-import BlockChainInformation.Transaction;
+import blockChainInformation.Transaction;
 
 public class BitcoinInfo {
 	
