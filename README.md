@@ -17,5 +17,5 @@ Building the API client library requires:
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-** | [**get**] | (http) | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query.
+** | [**getResourcesTransactionPerSecond()**] | (http) | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query.
 
