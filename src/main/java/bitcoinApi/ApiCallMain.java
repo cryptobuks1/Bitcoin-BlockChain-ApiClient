@@ -15,8 +15,9 @@ import blockChainInformation.TransactionData;
 import blockChainInformation.UnspentOutput;
 import market.ExchangeRates;
 import statistics.Chart;
+import statistics.Pool;
 import statistics.Statistic;
-import statistics.Stats;
+import statistics.Stat;
 
 public class ApiCallMain {
 
@@ -27,37 +28,39 @@ public class ApiCallMain {
 		// the timespan and the rollingAverage, which correspond to 5 weeks and
 		// 8 hours, respectively.
 
-		LinkedHashMap<String, String> params = new LinkedHashMap<String, String>();
+		/*LinkedHashMap<String, String> params = new LinkedHashMap<String, String>();
 		params.put("timespan", "5weeks");
+		params.put("start", "1551444600");
+		params.put("sampled", "true");
 		params.put("rollingAverage", "8hours");
+		params.put("format", "csv");
 
 		Statistic statistic = new Statistic(params);
 		Chart graphic = statistic.getResourcesTransactionPerSecond();
-		System.out.println(graphic.toString());
+		System.out.println(graphic.toString());*/
 
 		// The method getStats returns the summary of bitcoin statistics
 
-		Statistic statistic2 = new Statistic();
-		Stats stats = statistic2.getStats();
+		/*Statistic statistic2 = new Statistic();
+		Stat stats = statistic2.getStats();
 		System.out.println(stats.toString());
-		System.out.println("Get difficulty: " + stats.getDifficulty());
+		System.out.println("Get difficulty: " + stats.getDifficulty());*/
 
 		// The method getPools() retrieves all the mining pools. In this case,
 		// the parameter
 		// is the timespan that corresponds to 5 days.
 
 		LinkedHashMap<String, String> params2 = new LinkedHashMap<String, String>();
-		LinkedHashMap<String, Integer> output = new LinkedHashMap<String, Integer>();
 		params2.put("timespan", "5days");
 
 		Statistic statistic3 = new Statistic(params2);
-		output = statistic3.getPools();
-		System.out.println(output.toString().toLowerCase());
+		Pool pool = statistic3.getPools();
+		System.out.println(pool.toString().toLowerCase());
 
 		// The method getRateExchanges() returns the market prices for each
 		// currency
 
-		LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
+		/*LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
 		ExchangeRates exchange = new ExchangeRates();
 		output3 = exchange.getRateExchanges();
 		System.out.println(output3.toString().toLowerCase());
@@ -172,7 +175,7 @@ public class ApiCallMain {
 		BlockChainData blockChain = new BlockChainData(paramsTime);
 		ArrayList<Block> blocksfromASpecificTime = blockChain.getBlocksfromParameter();
 		System.out.println(blocksfromASpecificTime.toString());
-
+*/
 
 
 	}

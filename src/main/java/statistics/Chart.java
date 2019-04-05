@@ -12,7 +12,6 @@ public class Chart {
 	private String unit = "";
 	private String period = "";
 	private String description = "";
-	private JSONArray values;
 	private List<String> list = new ArrayList<String>();
 	
 	
@@ -91,16 +90,6 @@ public class Chart {
 		this.description = description;
 	}
 
-
-	public JSONArray getValues() {
-		return values;
-	}
-
-
-	public void setValues(JSONArray values) {
-		this.values = values;
-	}
-	
 	
 	public List<String> getList() {
 		return list;
@@ -113,7 +102,7 @@ public class Chart {
 	@Override
 	public String toString() {
 		return "Chart [status=" + status + ", name=" + name + ", unit=" + unit + ", period=" + period + ", description="
-				+ description + ", values=" + values + ", list=" + list + "]";
+				+ description + ", list=" + list + "]";
 	}
 
 }

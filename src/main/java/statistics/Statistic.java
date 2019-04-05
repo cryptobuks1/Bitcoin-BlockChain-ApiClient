@@ -40,11 +40,11 @@ public class Statistic {
 	
 	// Method that gets all the blockchain's state
 
-	public Stats getStats() throws IOException{
+	public Stat getStats() throws IOException{
 
 		String response = HttpClient.getInstance().get(stats, map);
 		JSONObject jsonObj = new JSONObject(response);
-		Stats stat = new Stats(jsonObj);
+		Stat stat = new Stat(jsonObj);
 		return stat;
 
 	}
@@ -52,13 +52,12 @@ public class Statistic {
 	// Method that gets all the blockchain's hashes distribution.
 	// Parameters: timespan, for example, five weeks
 
-	public LinkedHashMap<String, Integer> getPools() throws IOException{
+	public Pool getPools() throws IOException{
 		
 		String response = HttpClient.getInstance().get(pools, map);
 		JSONObject jsonObj = new JSONObject(response);
-		UtilMethods methods = new UtilMethods(jsonObj);
-		poolDistribution = methods.fromJSONtoLinkedHashMap();
-		return poolDistribution;
+		Pool pool = new Pool(jsonObj);
+		return pool;
 	}
 
 }

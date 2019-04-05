@@ -2,7 +2,7 @@ package statistics;
 
 import org.json.JSONObject;
 
-public class Stats {
+public class Stat {
 
 	private String market_price_usd = "";
 	private String hash_rate = "";
@@ -25,7 +25,7 @@ public class Stats {
 	private String trade_volume_usd = "";
 	private String timestamp = "";
 
-	public Stats(JSONObject jsonObj) {
+	public Stat(JSONObject jsonObj) {
 
 		this.market_price_usd = jsonObj.get("market_price_usd").toString();
 		this.hash_rate = jsonObj.get("hash_rate").toString();
