@@ -77,8 +77,7 @@ public class ApiCallMain {
 		Stat stats = statistic2.getStats();
 		
 
-		// The method getPools() retrieves all the mining pools. In this case,
-		// the parameter
+		// The method getPools() retrieves all the mining pools. In this case, the parameter
 		// is the timespan that corresponds to 5 days.
 
 		LinkedHashMap<String, String> params2 = new LinkedHashMap<String, String>();
@@ -87,8 +86,7 @@ public class ApiCallMain {
 		Statistic statistic3 = new Statistic(params2);
 		Pool pool = statistic3.getPools();
 
-		// The method getRateExchanges() returns the market prices for each
-		// currency
+		// The method getRateExchanges() returns the market prices for each currency
 
 		LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
 		ExchangeRates exchange = new ExchangeRates();
@@ -111,13 +109,6 @@ public class ApiCallMain {
 		String hash = "0000000000000bae09a7a393a8acded75aa67e46cb81f7acaa5ad94f9eacd103";
 		BlockChainData blockchain = new BlockChainData(hash);
 		Block block = blockchain.getBlockDataInformation();
-
-		// Some examples about how to extract from block of the blockchain i ->
-		System.out.println("Previous block " + block.getPrev_block());
-		System.out.println("Next block " + block.getNext_block().toString());
-		System.out.println("Transactions " + block.getTx().toString());
-		System.out.println("Block" + block.toString());
-		
 
 		// Get information from a single transaction by providing the hash
 
