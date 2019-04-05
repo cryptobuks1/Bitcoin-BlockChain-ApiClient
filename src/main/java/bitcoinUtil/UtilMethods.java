@@ -10,6 +10,7 @@ import bitcoinApi.HttpClient;
 import bitcoinInformation.BitcoinInfo;
 import blockChainInformation.Block;
 import blockChainInformation.TransactionData;
+import market.Rate;
 
 public class UtilMethods {
 
@@ -83,6 +84,7 @@ public class UtilMethods {
 			return bitcoinInfo;
 
 		}
+	
 
 		return object;
 	}
