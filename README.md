@@ -17,5 +17,7 @@ Building the API client library requires:
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-** | [**getResourcesTransactionPerSecond()**] | (http) | Get a list of all audit log entries. The query parameters allow you to restrict the returned results by date ranges, resource specifiers, or a full-text search query.
+Chart | **getResourcesTransactionPerSecond()** | GET | This method retrieves the number of daily bitcoins transactions. The parameters to include are: 1) timespan or duration of the chart, 2) rollingAverage or duration over which the data should be averaged, 3) star or the datatime when the chart stars (optional), 3) the format that can be in JSON or CSV, 4) Sample that limits the number of points.
+
+
 
