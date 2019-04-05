@@ -21,6 +21,7 @@ Class | Method | HTTP request | Description
 *Stat* | **getStats()** | **GET** | This method retrieves the stats which refer to a summary of blocks and transactions. For example, the hash rate, the total fees, the total number of transactions or mined blocks.
 *Pool* | **getPools()** | **GET** | This method retrieves information about the mining pools.
 *Rate* | **getBitcoinExchange()** | **GET** | This method retrieves the value of the currency in bitcoins.
+*Block* | **getBlockDataInformation()** | **GET** | This method provides the information related to a block matching with its corresponding hash.
 
 
 
