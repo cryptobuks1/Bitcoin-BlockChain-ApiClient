@@ -9,21 +9,28 @@ import bitcoinUtil.UtilMethods;
 
 public class Statistic {
 
-	private static String resourceTransactionsPerSecond = "charts/transactions-per-second";
-	private static String stats = "stats";
-	private static String pools = "pools";
+	private String chart = "charts/";
+	private String stats = "stats";
+	private String pools = "pools";
 	private LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
-	private LinkedHashMap<String, Integer> poolDistribution = new LinkedHashMap<String, Integer>();
-
 
 	public Statistic(LinkedHashMap<String, String> parameters) {
 
 		this.map = parameters;
 	}
 	
-	
-	public Statistic() {
+	public Statistic(String chartype) {
+		
+		this.chart += chartype;
 	}
+
+	public Statistic(LinkedHashMap<String, String> parameters, String chartype) {
+
+		this.map = parameters;
+		this.chart += chartype;
+	}
+	
+	public Statistic() {}
 	
 	// Method that gets all the transactions per second according to parameters
 	// such as timespan and rollingAverage
@@ -31,7 +38,7 @@ public class Statistic {
 	public Chart getResourcesTransactionPerSecond() throws IOException {
 
 		map.put("format", "json");
-		String response = HttpClient.getInstance().get(resourceTransactionsPerSecond, map);
+		String response = HttpClient.getInstance().get(chart, map);
 		JSONObject jsonObj = new JSONObject(response);
 		Chart chart = new Chart(jsonObj);
 		return chart;

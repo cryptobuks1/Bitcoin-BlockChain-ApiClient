@@ -24,7 +24,7 @@ public class ApiCallMain {
 
 	public static void main(String[] args) throws IOException, ParseException {
 
-		/*// Set parameters. In order to get the bitcoins transactions per second,
+		// Set parameters. In order to get the bitcoins transactions per second,
 		// the parameters to include are
 		// the timespan and the rollingAverage, which correspond to 5 weeks and
 		// 8 hours, respectively.
@@ -35,12 +35,21 @@ public class ApiCallMain {
 		params.put("sampled", "true");
 		params.put("rollingAverage", "8hours");
 		params.put("format", "csv");
-
-		Statistic statistic = new Statistic(params);
+		
+		String chartype = "transactions-per-second";
+		Statistic statistic = new Statistic(params, chartype);
 		Chart graphic = statistic.getResourcesTransactionPerSecond();
 		System.out.println(graphic.toString());
+		
+		// Retrieve charts (type=transaction per second).
+		// No parameters
 
-		// The method getStats returns the summary of bitcoin statistics
+		String chartype2 = "transactions-per-second";
+		Statistic statistic4 = new Statistic(chartype2);
+		Chart graphic2 = statistic4.getResourcesTransactionPerSecond();
+		System.out.println(graphic2.toString());
+
+		/*// The method getStats returns the summary of bitcoin statistics
 
 		Statistic statistic2 = new Statistic();
 		Stat stats = statistic2.getStats();
@@ -56,27 +65,28 @@ public class ApiCallMain {
 
 		Statistic statistic3 = new Statistic(params2);
 		Pool pool = statistic3.getPools();
-		System.out.println(pool.toString().toLowerCase());*/
+		System.out.println(pool.toString().toLowerCase());
 
 		// The method getRateExchanges() returns the market prices for each
 		// currency
 
-		/*LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
+		LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
 		ExchangeRates exchange = new ExchangeRates();
 		output3 = exchange.getRateExchanges();
-		System.out.println(output3.toString().toLowerCase());*/
+		System.out.println(output3.toString().toLowerCase());
 
 		// The method getRateExchanges() returns the exchange rates currency X
 		// -> bitcoin. The parameters to add are the currency (EUR)
 		// and its value. The method returns a float with the ratio of the
 		// exchange.
 
-		/*LinkedHashMap<String, String> params4 = new LinkedHashMap<String, String>();
+		LinkedHashMap<String, String> params4 = new LinkedHashMap<String, String>();
 		params4.put("currency", "EUR");
 		params4.put("value", "5000");
 		ExchangeRates exchange2 = new ExchangeRates(params4);
 		Rate rate = exchange2.getBitcoinExchange();
-		System.out.println(rate.toString());*/
+		System.out.println(rate.toString());
+		*/
 
 		// Get information from a block with a specific hash
 
@@ -89,9 +99,10 @@ public class ApiCallMain {
 		System.out.println("Next block " + block.getNext_block().toString());
 		System.out.println("Transactions " + block.getTx().toString());
 		System.out.println("Block" + block.toString());
+		
 */
 
-		// Get information from a single transaction by providing the hash
+		/*// Get information from a single transaction by providing the hash
 
 		String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
 		BlockChainData trasnsactionBlock = new BlockChainData(hashTransaction);
@@ -103,23 +114,16 @@ public class ApiCallMain {
 		System.out.println("Transactions' inputs" + transactionData.getInputs());
 		System.out.println("Transactions' outputs" + transactionData.getOut().toString());
 		System.out.println("Transactions" + transactionData.toString());
-
-		// Retrieve charts (type=transaction per second).
-		// No parameters
-
-		/*Statistic statistic4 = new Statistic();
-		Chart graphic2 = statistic4.getResourcesTransactionPerSecond();
-		System.out.println(graphic2.getList().toString());
 		
-		//Retrieve information from a block given its height
+		///Retrieve information from a block given its height
 		String height = "154595";
 		LinkedHashMap<String, String> paramsHeight = new LinkedHashMap<String, String>();
 		paramsHeight.put("format", "json");
 		BlockChainData trasnsactionBlockHeight = new BlockChainData(paramsHeight, height);
 		ArrayList<Block> listBlocks = trasnsactionBlockHeight.getBlockInformationfromHeight();
-		System.out.println(listBlocks.get(0).getTx().toString());
+		System.out.println(listBlocks.get(0).getTx().toString());*/
 		
-		//Retrieve information about a bitcoing given its address
+		/*//Retrieve information about a bitcoing given its address
 		String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
 		BlockChainData bitcoinAddress = new BlockChainData(address);
 		BitcoinInfo bitcoinInfo = bitcoinAddress.getBitcoinInformationFromAddress();
