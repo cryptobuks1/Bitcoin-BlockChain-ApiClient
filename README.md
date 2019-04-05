@@ -71,12 +71,7 @@ public class ApiCallMain {
 		Statistic statistic4 = new Statistic(chartype2);
 		Chart graphic2 = statistic4.getResourcesTransaction();
 
-		// The method getStats returns the summary of bitcoin statistics
-
-		Statistic statistic2 = new Statistic();
-		Stat stats = statistic2.getStats();
 		
-
 		// The method getPools() retrieves all the mining pools. In this case, the parameter
 		// is the timespan that corresponds to 5 days.
 
@@ -85,12 +80,6 @@ public class ApiCallMain {
 
 		Statistic statistic3 = new Statistic(params2);
 		Pool pool = statistic3.getPools();
-
-		// The method getRateExchanges() returns the market prices for each currency
-
-		LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
-		ExchangeRates exchange = new ExchangeRates();
-		output3 = exchange.getRateExchanges();
 
 		// The method getRateExchanges() returns the exchange rates currency X
 		// -> bitcoin. The parameters to add are the currency (EUR)
@@ -111,59 +100,34 @@ public class ApiCallMain {
 		Block block = blockchain.getBlockDataInformation();
 
 		// Get information from a single transaction by providing the hash
-
+		
 		String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
 		BlockChainData trasnsactionBlock = new BlockChainData(hashTransaction);
 		TransactionData transactionData = trasnsactionBlock.getTransactionData();
 		
-		///Retrieve information from a block given its height
-		String height = "154595";
-		LinkedHashMap<String, String> paramsHeight = new LinkedHashMap<String, String>();
-		paramsHeight.put("format", "json");
-		BlockChainData trasnsactionBlockHeight = new BlockChainData(paramsHeight, height);
-		ArrayList<Block> listBlocks = trasnsactionBlockHeight.getBlockInformationfromHeight();
-		
-		//Retrieve information about a bitcoing given its address
-		String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
-		BlockChainData bitcoinAddress = new BlockChainData(address);
-		BitcoinInfo bitcoinInfo = bitcoinAddress.getBitcoinInformationFromAddress();
-		
 		//Get bitcoin's information from multiple addresses
+		
 		LinkedHashMap<String, String> paramsAdresses = new LinkedHashMap<String, String>();
 		paramsAdresses.put("active", "1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq|1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
 		BlockChainData bitcoinTwoAddress = new BlockChainData(paramsAdresses);
 		ArrayList<Object> multipleAddresses = bitcoinTwoAddress.getBitcoinsMultipleAddresses();
 		
 		//Get information about the unspent outputs
+		
 		LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
 		paramsAdressOutputs.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
 		BlockChainData outputSpent = new BlockChainData(paramsAdressOutputs);
 		ArrayList<UnspentOutput> unspentOutputList = outputSpent.getUnspentOutputs();
-
-		//Get information about the balance
-		LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
-		paramsBalance.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
-		BlockChainData balance = new BlockChainData(paramsBalance);
-		ArrayList<Balance> balanceList = balance.getBalance();
-		
-		//Get information about the latest block
-		BlockChainData latestBlock = new BlockChainData();
-		Block lastblock = latestBlock.getLastBlock();
 		
 		//Get unconfirmed transactions
+		
 		LinkedHashMap<String, String> paramsTransactions = new LinkedHashMap<String, String>();
 		paramsTransactions.put("format","json");
 		BlockChainData transactions = new BlockChainData(paramsTransactions);
 		ArrayList<Transaction>unconfirmedTransactions = transactions.getUnconfirmedTransactions();
 		
 		//Get blocks from a specific pool (e.g., Bitclub Network)
-		LinkedHashMap<String, String> paramsPools = new LinkedHashMap<String, String>();
-		paramsPools.put("format","json");
-		String poolName =  "BitClub%20Network";
-		BlockChainData blockPool = new BlockChainData(paramsPools, poolName);
-		ArrayList<Block> blocks = blockPool.getBlocksfromParameter();
 		
-		//Get blocks from a specific pool (e.g., Bitclub Network)
 		LinkedHashMap<String, String> paramsTime = new LinkedHashMap<String, String>();
 		paramsTime.put("timespan", "1day");
 		paramsTime.put("format","json");
