@@ -9,6 +9,12 @@ Building the API client library requires:
 
 ## Installation
 
+To install the api client library to your local Maven repository, execute the following command:
+
+```shell
+mvn clean install
+```
+[How to include third parties libraries to your local mvn repository](https://www.mkyong.com/maven/how-to-include-library-manully-into-maven-local-repository/)
 
 ## Getting Started
 
