@@ -3,9 +3,7 @@ package bitcoinApi;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-
 import org.json.simple.parser.ParseException;
-
 import bitcoinInformation.BitcoinInfo;
 import blockChainInformation.Balance;
 import blockChainInformation.Block;
@@ -29,7 +27,7 @@ public class ApiCallMain {
 		// the timespan and the rollingAverage, which correspond to 5 weeks and
 		// 8 hours, respectively.
 
-		/*LinkedHashMap<String, String> params = new LinkedHashMap<String, String>();
+		LinkedHashMap<String, String> params = new LinkedHashMap<String, String>();
 		params.put("timespan", "5weeks");
 		params.put("start", "1551444600");
 		params.put("sampled", "true");
@@ -46,9 +44,9 @@ public class ApiCallMain {
 		String chartype2 = "transactions-per-second";
 		Statistic statistic4 = new Statistic(chartype2);
 		Chart graphic2 = statistic4.getResourcesTransaction();
-		System.out.println(graphic2.toString());*/
+		System.out.println(graphic2.toString());
 
-		/*// The method getStats returns the summary of bitcoin statistics
+		// The method getStats returns the summary of bitcoin statistics
 
 		Statistic statistic2 = new Statistic();
 		Stat stats = statistic2.getStats();
@@ -85,11 +83,11 @@ public class ApiCallMain {
 		ExchangeRates exchange2 = new ExchangeRates(params4);
 		Rate rate = exchange2.getBitcoinExchange();
 		System.out.println(rate.toString());
-		*/
+		
 
 		// Get information from a block with a specific hash
 
-		/*String hash = "0000000000000bae09a7a393a8acded75aa67e46cb81f7acaa5ad94f9eacd103";
+		String hash = "0000000000000bae09a7a393a8acded75aa67e46cb81f7acaa5ad94f9eacd103";
 		BlockChainData blockchain = new BlockChainData(hash);
 		Block block = blockchain.getBlockDataInformation();
 
@@ -119,10 +117,10 @@ public class ApiCallMain {
 		paramsHeight.put("format", "json");
 		BlockChainData trasnsactionBlockHeight = new BlockChainData(paramsHeight, height);
 		ArrayList<Block> listBlocks = trasnsactionBlockHeight.getBlockInformationfromHeight();
-		System.out.println(listBlocks.get(0).getTx().toString());*/
+		System.out.println(listBlocks.get(0).getTx().toString());
 		
 		//Retrieve information about a bitcoing given its address
-		/*String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
+		String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
 		BlockChainData bitcoinAddress = new BlockChainData(address);
 		BitcoinInfo bitcoinInfo = bitcoinAddress.getBitcoinInformationFromAddress();
 		System.out.println(bitcoinInfo.toString());
@@ -130,41 +128,41 @@ public class ApiCallMain {
 		// Array of transactions referring to a bitcoin
 		System.out.println("bitcoininfo: " + bitcoinInfo.toString());
 		// Total number of Transactions:
-		System.out.println("n_tx: " + bitcoinInfo.getN_tx());*/
+		System.out.println("n_tx: " + bitcoinInfo.getN_tx());
 		
 		//Get bitcoin's information from multiple addresses
-		/*LinkedHashMap<String, String> paramsAdresses = new LinkedHashMap<String, String>();
+		LinkedHashMap<String, String> paramsAdresses = new LinkedHashMap<String, String>();
 		paramsAdresses.put("active", "1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq|1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
 		BlockChainData bitcoinTwoAddress = new BlockChainData(paramsAdresses);
 		ArrayList<Object> multipleAddresses = bitcoinTwoAddress.getBitcoinsMultipleAddresses();
 		System.out.println(multipleAddresses.toString());
-		*/
+		
 		//Get information about the unspent outputs
-		/*LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
+		LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
 		paramsAdressOutputs.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
 		BlockChainData outputSpent = new BlockChainData(paramsAdressOutputs);
 		ArrayList<UnspentOutput> unspentOutputList = outputSpent.getUnspentOutputs();
-		System.out.println(unspentOutputList.toString());*/
+		System.out.println(unspentOutputList.toString());
 
 		//Get information about the balance
-		/*LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
+		LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
 		paramsBalance.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
 		BlockChainData balance = new BlockChainData(paramsBalance);
 		ArrayList<Balance> balanceList = balance.getBalance();
-		System.out.println(balanceList.toString());*/
+		System.out.println(balanceList.toString());
 		
 		//Get information about the latest block
-		/*BlockChainData latestBlock = new BlockChainData();
+		BlockChainData latestBlock = new BlockChainData();
 		Block lastblock = latestBlock.getLastBlock();
-		System.out.println(lastblock.toString());*/
+		System.out.println(lastblock.toString());
 		
 		//Get unconfirmed transactions
-		/*LinkedHashMap<String, String> paramsTransactions = new LinkedHashMap<String, String>();
+		LinkedHashMap<String, String> paramsTransactions = new LinkedHashMap<String, String>();
 		paramsTransactions.put("format","json");
 		BlockChainData transactions = new BlockChainData(paramsTransactions);
 		ArrayList<Transaction>unconfirmedTransactions = transactions.getUnconfirmedTransactions();
 		System.out.println(unconfirmedTransactions.toString());
-		*/
+		
 		//Get blocks from a specific pool (e.g., Bitclub Network)
 		LinkedHashMap<String, String> paramsPools = new LinkedHashMap<String, String>();
 		paramsPools.put("format","json");
