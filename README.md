@@ -22,6 +22,7 @@ Class | Method | HTTP request | Description
 *Pool* | **getPools()** | **GET** | This method retrieves information about the mining pools.
 *Rate* | **getBitcoinExchange()** | **GET** | This method retrieves the value of the currency in bitcoins.
 *Block* | **getBlockDataInformation()** | **GET** | This method provides the information related to a block matching with its corresponding hash.
+*TransactionData* | **getTransactionData()** | **GET** | This method provides the information from a single transaction with a given hash.
 
 
 
