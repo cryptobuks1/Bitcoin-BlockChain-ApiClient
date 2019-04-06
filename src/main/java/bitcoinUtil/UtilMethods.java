@@ -1,7 +1,16 @@
 package bitcoinUtil;
 
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import org.json.JSONObject;
+
+import com.google.gson.Gson;
+
+import bitcoinApi.HttpClient;
+import bitcoinInformation.BitcoinInfo;
+import blockChainInformation.Block;
+import blockChainInformation.TransactionData;
+import market.Rate;
 
 public class UtilMethods {
 
@@ -13,6 +22,10 @@ public class UtilMethods {
 	public UtilMethods(JSONObject jsonObj) {
 
 		this.jsonObject = jsonObj;
+	}
+
+	public UtilMethods() {
+		super();
 	}
 
 	public LinkedHashMap<String, Integer> fromJSONtoLinkedHashMap() {
@@ -43,4 +56,37 @@ public class UtilMethods {
 
 		return mainMap;
 	}
+
+	public Object getResponse(String url, LinkedHashMap<String, String> parameters, Object object) throws IOException {
+
+		if (object instanceof TransactionData) {
+
+			String response = HttpClient.getInstance().getURL(url, parameters);
+			Gson gson = new Gson();
+			TransactionData transactionData = gson.fromJson(response, TransactionData.class);
+			return transactionData;
+		}
+		
+
+		if (object instanceof Block) {
+
+			String response = HttpClient.getInstance().getURL(url, parameters);
+			Gson gson = new Gson();
+			Block block = gson.fromJson(response, Block.class);
+			return block;
+		}
+		
+		if(object instanceof BitcoinInfo){
+			
+			String response = HttpClient.getInstance().getURL(url, parameters);
+			Gson gson = new Gson();
+			BitcoinInfo bitcoinInfo = gson.fromJson(response, BitcoinInfo.class);
+			return bitcoinInfo;
+
+		}
+	
+
+		return object;
+	}
+
 }

@@ -20,7 +20,10 @@ public class TransactionData {
 	private String hash = "";
 	private String vout_sz = "";
 	
-	
+
+	public TransactionData() {
+	}
+
 	public TransactionData(String ver, ArrayList<Input> inputs, String weight, String block_height, String relayed_by,
 			ArrayList<PreviousOutput> out, String lock_time, String size, boolean double_spend, String block_index,
 			String time, String tx_index, String vin_sz, String hash, String vout_sz) {

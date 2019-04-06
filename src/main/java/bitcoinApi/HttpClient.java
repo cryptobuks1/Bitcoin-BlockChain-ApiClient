@@ -40,12 +40,11 @@ public class HttpClient implements HttpClientInterface {
 
 		return openURL(BASE_URL, resource, params, "GET");
 	}
-	
+
 	public String getURL(String resource, Map<String, String> params) throws IOException {
-		
+
 		return openURL(BASE_URL2, resource, params, "GET");
 	}
-	
 
 	public static String openURL(String baseUrl, String resource, Map<String, String> params, String typeRequest)
 			throws IOException {
@@ -60,13 +59,12 @@ public class HttpClient implements HttpClientInterface {
 			if (params.isEmpty()) {
 
 				url = new URL(baseUrl + resource);
-				System.out.println("url " + url);
-
+				System.out.println(url);
 
 			} else {
 
 				url = new URL(baseUrl + resource + "?" + encodedParams);
-				System.out.println("url " + url);
+				System.out.println(url);
 			}
 
 			HttpURLConnection conn = null;
@@ -85,18 +83,15 @@ public class HttpClient implements HttpClientInterface {
 				} else {
 
 					response = readResponseInputStream(conn.getInputStream());
-
 				}
 
 			} catch (Exception e) {
 
 				e.printStackTrace();
-
 			}
 		}
 
 		return response;
-
 	}
 
 	private static String urlEncodeParams(Map<String, String> parameters) {
@@ -108,14 +103,12 @@ public class HttpClient implements HttpClientInterface {
 			for (Entry<String, String> keyvalue : parameters.entrySet()) {
 
 				URLCall += keyvalue.getKey() + "=" + keyvalue.getValue() + "&";
-				System.out.println("URLCall: " + URLCall);
 			}
-			
+
 			URLCall = URLCall.substring(0, URLCall.length() - 1);
 		}
 
 		System.out.println(URLCall);
-
 		return URLCall;
 	}
 
@@ -131,10 +124,7 @@ public class HttpClient implements HttpClientInterface {
 		}
 
 		br.close();
-
 		return result;
-
 	}
 
-	
 }

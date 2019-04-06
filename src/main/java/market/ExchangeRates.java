@@ -6,6 +6,7 @@ import java.util.LinkedHashMap;
 import org.json.JSONObject;
 import bitcoinApi.HttpClient;
 import bitcoinUtil.UtilMethods;
+import blockChainInformation.Block;
 
 public class ExchangeRates {
 	
@@ -36,11 +37,16 @@ public class ExchangeRates {
 		return results;	
 	}
 	
-	public Float getBitcoinExchange() throws IOException {
+	public Rate getBitcoinExchange() throws IOException {
 		
+		Rate rate = new Rate();
 		String response = HttpClient.getInstance().get(exchangeCurrency, parameters);
 		float exchange = Float.parseFloat(response);
-		return exchange;
+		rate.setBitcoin(exchange);
+		rate.setCurrency(parameters.get("currency"));
+		rate.setValue(parameters.get("value"));
+		return rate;
+		
 	}
 
 }

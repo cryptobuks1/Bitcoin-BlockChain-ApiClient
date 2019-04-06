@@ -5,17 +5,14 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.StringTokenizer;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import com.google.gson.Gson;
-
 import bitcoinApi.HttpClient;
 import bitcoinInformation.AddressBitcoin;
 import bitcoinInformation.BitcoinInfo;
-import bitcoinInformation.Currency;
 import bitcoinInformation.Wallet;
+import bitcoinUtil.UtilMethods;
 
 public class BlockChainData {
 
@@ -70,8 +67,6 @@ public class BlockChainData {
 
 	}
 	
-
-
 	//Get blocks for a specific pool of miners
 	
 	public ArrayList<Block> getBlocksfromParameter() throws IOException{
@@ -115,10 +110,11 @@ public class BlockChainData {
 	
 	public Block getLastBlock() throws IOException{
 		
-		String response = HttpClient.getInstance().getURL(latestBlock, parameters);
-		Gson gson = new Gson();
-		Block block = gson.fromJson(response, Block.class);
+		UtilMethods util = new UtilMethods();
+		Block block = new Block();
+		block = (Block) util.getResponse(latestBlock, parameters, block);
 		return block;
+
 	}
 	
 	
@@ -220,9 +216,10 @@ public class BlockChainData {
 	// Get information of a block from an address
 	public BitcoinInfo getBitcoinInformationFromAddress() throws IOException {
 
-		String response = HttpClient.getInstance().getURL(address, parameters);
-		Gson gson = new Gson();
-		BitcoinInfo bitcoinInfo = gson.fromJson(response, BitcoinInfo.class);
+		
+		UtilMethods util = new UtilMethods();
+		BitcoinInfo bitcoinInfo = new BitcoinInfo();
+		bitcoinInfo = (BitcoinInfo) util.getResponse(address, parameters, bitcoinInfo);
 		return bitcoinInfo;
 
 	}
@@ -252,9 +249,9 @@ public class BlockChainData {
 
 	public Block getBlockDataInformation() throws IOException {
 
-		String response = HttpClient.getInstance().getURL(url, parameters);
-		Gson gson = new Gson();
-		Block block = gson.fromJson(response, Block.class);
+		UtilMethods util = new UtilMethods();
+		Block block = new Block();
+		block = (Block) util.getResponse(url, parameters, block);
 		return block;
 
 	}
@@ -263,11 +260,10 @@ public class BlockChainData {
 
 	public TransactionData getTransactionData() throws IOException {
 
-		String response = HttpClient.getInstance().getURL(urlTx, parameters);
-		Gson gson = new Gson();
-		TransactionData transactionData = gson.fromJson(response, TransactionData.class);
+		UtilMethods util = new UtilMethods();
+		TransactionData transactionData = new TransactionData();
+		transactionData = (TransactionData) util.getResponse(urlTx, parameters, transactionData);
 		return transactionData;
 
 	}
-
 }

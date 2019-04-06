@@ -20,7 +20,9 @@ public class Block {
 	private String height = "";
 	private ArrayList<Transaction> tx;
 	
-	
+	public Block() {}
+
+
 	public Block(String hash, String ver, String prev_block, ArrayList<String> next_block, String mrkl_root,
 			String time, String bits, String fee, String nonce, String n_tx, String size, String block_index,
 			String main_chain, String height, ArrayList<Transaction> tx) {
