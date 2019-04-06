@@ -4,7 +4,7 @@ This a JAVA api client for retrieving data from https://blockchain.info. It can 
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
+1. Java 1.8+
 2. Maven
 
 ## Installation
