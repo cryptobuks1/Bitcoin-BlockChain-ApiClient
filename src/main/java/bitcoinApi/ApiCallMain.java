@@ -27,7 +27,7 @@ public class ApiCallMain {
 		// the timespan and the rollingAverage, which correspond to 5 weeks and
 		// 8 hours, respectively.
 
-		LinkedHashMap<String, String> params = new LinkedHashMap<String, String>();
+		/*LinkedHashMap<String, String> params = new LinkedHashMap<String, String>();
 		params.put("timespan", "5weeks");
 		params.put("start", "1551444600");
 		params.put("sampled", "true");
@@ -36,24 +36,24 @@ public class ApiCallMain {
 		
 		Statistic statistic = new Statistic(params);
 		Chart graphic = statistic.getResourcesTransactionPerSecond();
-		System.out.println(graphic.toString());
+		System.out.println(graphic.toString());*/
 		
-		// Retrieve charts (type=transaction per second).
+		/*// Retrieve charts (type=transaction per second).
 		// No parameters
 
 		String chartype2 = "transactions-per-second";
 		Statistic statistic4 = new Statistic(chartype2);
 		Chart graphic2 = statistic4.getResourcesTransaction();
-		System.out.println(graphic2.toString());
+		System.out.println(graphic2.toString());*/
 
 		// The method getStats returns the summary of bitcoin statistics
 
-		Statistic statistic2 = new Statistic();
+		/*Statistic statistic2 = new Statistic();
 		Stat stats = statistic2.getStats();
 		System.out.println(stats.toString());
 		System.out.println("Get difficulty: " + stats.getDifficulty());
-
-		// The method getPools() retrieves all the mining pools. In this case,
+*/
+		/// The method getPools() retrieves all the mining pools. In this case,
 		// the parameter
 		// is the timespan that corresponds to 5 days.
 
@@ -64,7 +64,7 @@ public class ApiCallMain {
 		Pool pool = statistic3.getPools();
 		System.out.println(pool.toString().toLowerCase());
 
-		// The method getRateExchanges() returns the market prices for each
+		/*// The method getRateExchanges() returns the market prices for each
 		// currency
 
 		LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
@@ -177,7 +177,7 @@ public class ApiCallMain {
 		paramsTime.put("format","json");
 		BlockChainData blockChain = new BlockChainData(paramsTime);
 		ArrayList<Block> blocksfromASpecificTime = blockChain.getBlocksfromParameter();
-		System.out.println(blocksfromASpecificTime.toString());
+		System.out.println(blocksfromASpecificTime.toString());*/
 
 	}
 }
