@@ -1,8 +1,8 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getResourcesTransactionPerSecond**](BlockchainCharts&StatisticsApi.md#getResourcesTransactionPerSecond) | **GET** charts/$chartName?timespan=$timespan&rollingAverage=$rollingAverage&start=$start&format=$format&sampled=$sampled | Get the number of transactions per second
-[**getStats**](EnvironmentsApi.md#getEnvironment) | **GET** /projects/{projectKey}/environments/{environmentKey} | Get an environment given a project and key.
-[**getPools**](EnvironmentsApi.md#patchEnvironment) | **PATCH** /projects/{projectKey}/environments/{environmentKey} | Modify an environment by ID.
+[**getStats**](BlockchainCharts&StatisticsApi.md#getStats) | **GET** /stats | Returns the summary of bitcoin statistics.
+[**getPools**](BlockchainCharts&StatisticsApi.md#getPools) | **GET** pools?timespan=$timespan | Retrieves all the mining pools.
 
 
 <a name="getResourcesTransactionPerSecond"></a>
