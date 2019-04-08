@@ -234,7 +234,7 @@ List of *Block* | [**getBlockInformationfromHeight()**](docs/BlockChainData.md#g
 *Block* | [**getLastBlock()**](docs/BlockChainData.md#getLastBlock) | **GET** | This method returns the last generated block of a blockchain. 
 *Transaction* | [**getUnconfirmedTransactions()**](docs/BlockChainData.md#getUnconfirmedTransactions) | **GET** | This method returns all the unconfirmed transactions. 
 *Block* | [**getBlocksfromParameter()**](docs/BlockChainData.md#getBlocksfromParameter) | **GET** | This method returns the blocks generated for a day or a specific pool (e.g., putting as parameters 1day or BitClub%20Network as mining pool, respectively)
-*Balance* | [**getBalance()**](docs/BlockChainData.md#getBalance) | **GET** | Get information about the balance)
+*Balance* | [**getBalance()**](docs/BlockChainData.md#getBalance) | **GET** | Get information about the balance
 
 
 
