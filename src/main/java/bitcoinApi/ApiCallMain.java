@@ -3,15 +3,19 @@ package bitcoinApi;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
+
 import org.json.simple.parser.ParseException;
 import bitcoinInformation.BitcoinInfo;
+import bitcoinUtil.UtilMethods;
 import blockChainInformation.Balance;
 import blockChainInformation.Block;
 import blockChainInformation.BlockChainData;
 import blockChainInformation.Transaction;
 import blockChainInformation.TransactionData;
 import blockChainInformation.UnspentOutput;
-import market.ExchangeRates;
+import market.Exchange;
+import market.ExchangeRate;
 import market.Rate;
 import statistics.Chart;
 import statistics.Pool;
@@ -57,22 +61,25 @@ public class ApiCallMain {
 		// the parameter
 		// is the timespan that corresponds to 5 days.
 
-		LinkedHashMap<String, String> params2 = new LinkedHashMap<String, String>();
+		/*LinkedHashMap<String, String> params2 = new LinkedHashMap<String, String>();
 		params2.put("timespan", "5days");
 
-		Statistic statistic3 = new Statistic(params2);
+		Statistic statistic3 = new Statistic(params2);ad
 		Pool pool = statistic3.getPools();
-		System.out.println(pool.toString().toLowerCase());
+		System.out.println(pool.toString().toLowerCase());*/
 
-		/*// The method getRateExchanges() returns the market prices for each
+		// The method getRateExchanges() returns the market prices for each
 		// currency
 
+		UtilMethods util = new UtilMethods();
 		LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
-		ExchangeRates exchange = new ExchangeRates();
+		ExchangeRate exchange = new ExchangeRate();
 		output3 = exchange.getRateExchanges();
-		System.out.println(output3.toString().toLowerCase());
+		//System.out.println(output3.toString());
+		List<Exchange> exchanges = util.returnToExchangeRate(output3);
+		System.out.println(exchanges.get(11).getCurrencyValue());
 
-		// The method getRateExchanges() returns the exchange rates currency X
+		/*// The method getRateExchanges() returns the exchange rates currency X
 		// -> bitcoin. The parameters to add are the currency (EUR)
 		// and its value. The method returns a float with the ratio of the
 		// exchange.

@@ -8,7 +8,7 @@ import bitcoinApi.HttpClient;
 import bitcoinUtil.UtilMethods;
 import blockChainInformation.Block;
 
-public class ExchangeRates {
+public class ExchangeRate {
 	
 	private static String exchangeRates = "ticker";
 	private static String exchangeCurrency = "tobtc";
@@ -18,19 +18,20 @@ public class ExchangeRates {
 			new LinkedHashMap<String, LinkedHashMap<String, Object>>();
 
 	
-	public ExchangeRates(LinkedHashMap<String, String> parameters){
+	public ExchangeRate(LinkedHashMap<String, String> parameters){
 		
 		this.parameters = parameters;
 	}
 	
 	
-	public ExchangeRates() {
+	public ExchangeRate() {
 		super();
 	}
 
 	public LinkedHashMap<String, LinkedHashMap<String, Object>> getRateExchanges() throws IOException {
 
 		String response = HttpClient.getInstance().get(exchangeRates, parameters);
+		System.out.println(response);
 		JSONObject jsonObj = new JSONObject(response);
 		UtilMethods methods = new UtilMethods(jsonObj);
 		results = methods.fromJSONtoLinkedHashMapWithObject();
