@@ -1,5 +1,5 @@
 # Bitcoin-BlockChain-ApiClient
-This a JAVA api client for retrieving data from https://blockchain.info. It can be extended by any developers. The design of the client is very OOP. Enjoy it!
+This a JAVA API client for retrieving data from https://blockchain.info. It can be extended by any developers. The design of the client is very OOP. Enjoy it!
 
 ## Requirements
 
@@ -9,7 +9,7 @@ Building the API client library requires:
 
 ## Installation
 
-To create the  api client library .jar, execute the following command:
+To create the API client library .jar, execute the following command:
 
 ### Manual Installation with Maven
 
