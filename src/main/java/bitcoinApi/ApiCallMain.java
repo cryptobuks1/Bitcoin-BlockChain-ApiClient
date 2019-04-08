@@ -42,13 +42,12 @@ public class ApiCallMain {
 		Chart graphic = statistic.getResourcesTransactionPerSecond();
 		System.out.println(graphic.toString());*/
 		
-		/*// Retrieve charts (type=transaction per second).
-		// No parameters
+		// Retrieve charts (type=transaction per second).
 
 		String chartype2 = "transactions-per-second";
 		Statistic statistic4 = new Statistic(chartype2);
 		Chart graphic2 = statistic4.getResourcesTransaction();
-		System.out.println(graphic2.toString());*/
+		System.out.println(graphic2.toString());
 
 		// The method getStats returns the summary of bitcoin statistics
 
