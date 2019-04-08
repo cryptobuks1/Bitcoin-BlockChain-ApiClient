@@ -1,8 +1,8 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getResourcesTransactionPerSecond**](BlockchainCharts&StatisticsApi.md#getResourcesTransactionPerSecond) | **GET** charts/$chartName?timespan=$timespan&rollingAverage=$rollingAverage&start=$start&format=$format&sampled=$sampled | Get the number of transactions per second
-[**getStats**](BlockchainCharts&StatisticsApi.md#getStats) | **GET** /stats | Returns bitcoin stats.
-[**getPools**](BlockchainCharts&StatisticsApi.md#getPools) | **GET** pools?timespan=$timespan | Retrieves all the mining pools.
+[**getStats**](BlockchainCharts&StatisticsApi.md#getStats) | **GET** /stats | Return bitcoin stats.
+[**getPools**](BlockchainCharts&StatisticsApi.md#getPools) | **GET** pools?timespan=$timespan | Retrieve all the mining pools.
 
 
 <a name="getResourcesTransactionPerSecond"></a>
@@ -12,6 +12,7 @@ Method | HTTP request | Description
 Get the number of transactions per second
 
 ### Example
+
 ```java
 
 import java.io.IOException;
@@ -41,6 +42,7 @@ public static void main(String[] args) throws IOException, ParseException {
 		System.out.println(graphic.toString());
 	}
 }
+
 ```
 
 ### Parameters
@@ -126,8 +128,6 @@ public class ApiCallMain {
 		Statistic statistic3 = new Statistic(params2);
 		Pool pool = statistic3.getPools();
 		System.out.println(pool.toString().toLowerCase());
-	
-	
 	}
 }
 
@@ -146,7 +146,7 @@ Pool
 
 ### HTTP request headers
 
- - **Content-Type**: application/json; charset=utf-8
+- **Content-Type**: application/json; charset=utf-8
 
  
  

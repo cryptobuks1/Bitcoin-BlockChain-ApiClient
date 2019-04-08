@@ -3,7 +3,7 @@ Method | HTTP request | Description
 [**getBlockDataInformation()**](BlockChainData.md#getBlockDataInformation) | **GET**  | Get information about a block given its hash
 [**getTransactionData()**](BlockChainData.md#getTransactionData) | **GET**  | Get information from a single transaction by providing a hash
 [**getResourcesTransaction()**](BlockChainData.md#getResourcesTransaction) | **GET**  | Get the transactions according to the  specified chart type.
-[**getBlockInformationfromHeight()**](BlockChainData.md#getBlockInformationfromHeight) | **GET**  | Get block information of a block from a given height
+[**getBlockInformationfromHeight()**](BlockChainData.md#getBlockInformationfromHeight) | **GET**  | Get block information of a block for a given height
 [**getBitcoinInformationFromAddress()**](BlockChainData.md#getBitcoinInformationFromAddress) | **GET**  | Get bitcoin information from an address
 [**getBitcoinsMultipleAddresses()**](BlockChainData.md#getBitcoinsMultipleAddresses) | **GET**  | Get bitcoin from multiple addresses
 [**getUnspentOutputs()**](BlockChainData.md#getUnspentOutputs) | **GET**  | Get information (List of UnspentOutput) about the unspent outputs, providing as parameter the address.
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 # **getBlockDataInformation**
 > getBlockDataInformation
 
-Get information related to a block according its hash
+Get information related to a block according to its hash
 
 ### Example
 
@@ -369,8 +369,8 @@ public class ApiCallMain {
 		Block lastblock = latestBlock.getLastBlock();
 		System.out.println(lastblock.toString());
 		
-		}
 	}
+}
 
 ```
 ### Parameters
@@ -439,7 +439,6 @@ public class ApiCallMain {
 **$pool_name** (e.g. BitClub%20Network)| **String**| Pool's name.| Mandatory
 
 ### Return 
-
 
 List of Blocks -> Block
 

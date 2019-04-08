@@ -1,14 +1,14 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRateExchanges()**](Rate.md#getRateExchanges) | **GET**  | Get Returns a JSON object with the currency codes as keys. "15m" is the 15 minutes delayed market price, "last" is the most recent market price, "symbol" is the currency symbol.
-[**getBitcoinExchange()**](Rate.md#getBitcoinExchange) | **GET**  | Retrieves a given currency in bitcoins.
+[**getRateExchanges()**](Rate.md#getRateExchanges) | **GET**  | Get a JSON object with the currency codes as keys. "15m" is the 15 minutes delayed market price, "last" is the most recent market price, "symbol" is the currency symbol.
+[**getBitcoinExchange()**](Rate.md#getBitcoinExchange) | **GET**  | Get a given currency in bitcoins.
 
 
 <a name="getRateExchanges"></a>
 # **getRateExchanges**
 > getRateExchanges
 
-Get the market price of the total existing currencies.
+Get the market price of all currencies.
 
 ### Example
 
@@ -34,7 +34,7 @@ public static void main(String[] args) throws IOException, ParseException {
 		System.out.println(exchanges.get(0).getCurrencyValue());
 
 	}
-	}
+}
 
 ```
 ### Parameters
@@ -49,13 +49,11 @@ Returns a LinkedHashMap<String, LinkedHashMap<String, Object>> that can be trans
 
  - **Content-Type**: application/json; charset=utf-8
  
-
-
 <a name="getBitcoinExchange"></a>
 # **getBitcoinExchange**
 > getBitcoinExchange
 
-Retrieves a given currency in bitcoins
+Gets a given currency in bitcoins.
 
 ### Example
 
