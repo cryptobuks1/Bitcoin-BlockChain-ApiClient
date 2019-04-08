@@ -22,12 +22,12 @@ mvn clean package
 
 ### Manual Installation in Local Repo
 
-In order to add the api client dependency to your maven local repo, execute this command:
+In order to add the API client dependency to your maven local repository, execute this command:
 
 ```shell
 mvn clean install
 ```
-Refer to the following link to include third parties libraries to yout maven local repository [How to include third parties libraries to your local mvn repository](https://www.mkyong.com/maven/how-to-include-library-manully-into-maven-local-repository/)
+Go to the following link to include third parties libraries to your maven local repository [How to include third parties libraries to your local mvn repository](https://www.mkyong.com/maven/how-to-include-library-manully-into-maven-local-repository/)
 
 ### Maven users
 
