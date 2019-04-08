@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mjggodoy</groupId>
-	<artifactId>com.github.mjggodoy</artifactId>
-	<version>1.0</version>
+	<artifactId>api-bitcoin-java</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
 			<groupId>org.json</groupId>
@@ -38,7 +38,7 @@
 		</dependency>
 	</dependencies>
 
-	<name>Bitcoin-BlockChain-ApiClien</name>
+	<name>Bitcoin-BlockChain-ApiClient</name>
 	<description>A JAVA api client to retrieve information on bitcoins'blochains</description>
 	<url>https://github.com/mjggodoy/Bitcoin-BlockChain-ApiClient</url>
 
@@ -149,5 +149,16 @@
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
+	<dependencyManagement>
+    <dependencies>
+      <dependency>
+      <groupId>com.github.mjggodoy</groupId>
+      <artifactId>api-bitcoin-java</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+     </dependency>
+	</dependencies>
+	</dependencyManagement>
+     
 
 </project>
