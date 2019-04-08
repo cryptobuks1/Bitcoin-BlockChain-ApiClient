@@ -144,25 +144,19 @@ public class ApiCallMain {
 		System.out.println(multipleAddresses.toString());*/
 		
 		//Get information about the unspent outputs
-		LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
+		/*LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
 		paramsAdressOutputs.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
 		BlockChainData outputSpent = new BlockChainData(paramsAdressOutputs);
 		List<UnspentOutput> unspentOutputList = outputSpent.getUnspentOutputs();
-		System.out.println(unspentOutputList.toString());
+		System.out.println(unspentOutputList.toString());*/
 
-		/*//Get information about the balance
-		LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
-		paramsBalance.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
-		BlockChainData balance = new BlockChainData(paramsBalance);
-		ArrayList<Balance> balanceList = balance.getBalance();
-		System.out.println(balanceList.toString());
 		
 		//Get information about the latest block
 		BlockChainData latestBlock = new BlockChainData();
 		Block lastblock = latestBlock.getLastBlock();
 		System.out.println(lastblock.toString());
 		
-		//Get unconfirmed transactions
+		/*//Get unconfirmed transactions
 		LinkedHashMap<String, String> paramsTransactions = new LinkedHashMap<String, String>();
 		paramsTransactions.put("format","json");
 		BlockChainData transactions = new BlockChainData(paramsTransactions);
@@ -176,6 +170,14 @@ public class ApiCallMain {
 		BlockChainData blockPool = new BlockChainData(paramsPools, poolName);
 		ArrayList<Block> blocks = blockPool.getBlocksfromParameter();
 		System.out.println(blocks.toString());
+		
+
+		//Get information about the balance
+		LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
+		paramsBalance.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
+		BlockChainData balance = new BlockChainData(paramsBalance);
+		ArrayList<Balance> balanceList = balance.getBalance();
+		System.out.println(balanceList.toString());
 		
 		//Get blocks from a specific pool (e.g., Bitclub Network)
 		LinkedHashMap<String, String> paramsTime = new LinkedHashMap<String, String>();

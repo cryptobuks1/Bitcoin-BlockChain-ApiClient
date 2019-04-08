@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**getBitcoinInformationFromAddress()**](BlockChainData.md#getBitcoinInformationFromAddress) | **GET**  | Get bitcoin information from an address
 [**getBitcoinsMultipleAddresses()**](BlockChainData.md#getBitcoinsMultipleAddresses) | **GET**  | Get bitcoin from multiple addresses
 [**getUnspentOutputs()**](BlockChainData.md#getUnspentOutputs) | **GET**  | Get information (List of UnspentOutput) about the unspent outputs, providing as parameter the address.
+[**getLastBlock()**](BlockChainData.md#getLastBlock) | **GET**  | Get the last generated block of a blockchain.
+[**getUnconfirmedTransactions()**](BlockChainData.md#getUnconfirmedTransactions) | **GET**  | Get unconfirmed transactions
 
 <a name="getBlockDataInformation"></a>
 # **getBlockDataInformation**
@@ -342,5 +344,43 @@ List<UnspentOutput> -> list of Unspent class
 
 - **Content-Type**: application/json; charset=utf-8
 
+
+<a name="getLastBlock"></a>
+# **getLastBlock**
+> getLastBlock
+
+Get the last generated block of a blockchain.
+
+### Example
+
+```java
+
+import java.io.IOException;
+import org.json.simple.parser.ParseException;
+import blockChainInformation.Block;
+import blockChainInformation.BlockChainData;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+		
+		BlockChainData latestBlock = new BlockChainData();
+		Block lastblock = latestBlock.getLastBlock();
+		System.out.println(lastblock.toString());
+		
+		}
+	}
+
+```
+### Parameters
+
+No parameters
+
+### Return 
+
+Block
+
+### HTTP request headers
+
+- **Content-Type**: application/json; charset=utf-8
 
  

@@ -153,9 +153,9 @@ Class | Method | HTTP request | Description
 List of *Block* | [**getBlockInformationfromHeight()**](docs/BlockChainData.md#getBlockInformationfromHeight) | **GET** | This method retrieves an array of one or more blocks at the height specified as parameter.
 *BitcoinInfo* | [**getBitcoinInformationFromAddress()**](docs/BlockChainData.md#getBitcoinInformationFromAddress) | **GET** | This method retrieves bitcoin information from a specified address.
 *AddressBitcoin*, *Wallet*, *Transaction* | [**getBitcoinsMultipleAddresses()**](docs/BlockChainData.md#getBitcoinsMultipleAddresses) | **GET** | This method retrieves bitcoin information (List of AddressBitcoin, Wallet, Transaction) putting as parameter multiple addresses.
-*UnspentOutput* | **getUnspentOutputs()** | **GET** | This method retrieves information (List of UnspentOutput) about the unspent outputs by providing as parameter the address.
-*Block* | **getLastBlock()** | **GET** | This method returns the last generated block of a blockchain. 
-*Transaction* | **getUnconfirmedTransactions()** | **GET** | This method returns all the unconfirmed transactions. 
+*UnspentOutput* | [**getUnspentOutputs()**](docs/BlockChainData.md#getUnspentOutputs) | **GET** | This method retrieves information (List of UnspentOutput) about the unspent outputs by providing as parameter the address.
+*Block* | [**getLastBlock()**](docs/BlockChainData.md#getLastBlock) | **GET** | This method returns the last generated block of a blockchain. 
+*Transaction* | [**getUnconfirmedTransactions()**](docs/BlockChainData.md#getUnconfirmedTransactions) | **GET** | This method returns all the unconfirmed transactions. 
 *Block* | **getBlocksfromParameter()** | **GET** | This method returns the blocks generated for a day or a specific pool (e.g., putting as parameters 1day or BitClub%20Network as mining pool, respectively)
 
 
