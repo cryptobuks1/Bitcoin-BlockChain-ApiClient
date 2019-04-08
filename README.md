@@ -48,7 +48,7 @@ You can add this dependency to your pom.xml file:
 public class ApiCallMain {
 
 	public static void main(String[] args) throws IOException, ParseException {
-
+	
 		// Set parameters. In order to get the bitcoins transactions per second,
 		// the parameters to include are
 		// the timespan and the rollingAverage, which correspond to 5 weeks and
@@ -59,7 +59,7 @@ public class ApiCallMain {
 		params.put("start", "1551444600");
 		params.put("sampled", "true");
 		params.put("rollingAverage", "8hours");
-		params.put("format", "csv");
+		params.put("format", "json");
 		
 		Statistic statistic = new Statistic(params);
 		Chart graphic = statistic.getResourcesTransactionPerSecond();
@@ -134,18 +134,21 @@ public class ApiCallMain {
 		BlockChainData blockChain = new BlockChainData(paramsTime);
 		ArrayList<Block> blocksfromASpecificTime = blockChain.getBlocksfromParameter();
 	}
+	}
+
 ```
 
 ## API documentation
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Chart* | **getResourcesTransactionPerSecond()** | **GET** | This method retrieves the number of daily bitcoins transactions. The parameters to include are: 1) timespan or duration of the chart, 2) rollingAverage or duration over which the data should be averaged, 3) start or the datatime when the chart starts (optional), 3) the format that is in JSON, 4) Sample that limits the number of points.
-*Stat* | **getStats()** | **GET** | This method retrieves the stats which refer to a summary of blocks and transactions. For example, the hash rate, the total fees, the total number of transactions or mined blocks.
-*Pool* | **getPools()** | **GET** | This method retrieves information about the mining pools.
-*Rate* | **getBitcoinExchange()** | **GET** | This method retrieves the value of the currency in bitcoins.
-*Block* | **getBlockDataInformation()** | **GET** | This method provides the information related to a block matching with its corresponding hash.
-*TransactionData* | **getTransactionData()** | **GET** | This method provides the information from a single transaction with a given hash.
+*Chart* | [**getResourcesTransactionPerSecond()**](docs/BlockchainCharts&StatisticsApi.md#getResourcesTransactionPerSecond) | **GET** | This method retrieves the number of bitcoins transactions per second. The parameters to include are: 1) timespan or duration of the chart, 2) rollingAverage or duration over which the data should be averaged, 3) start or the datatime when the chart starts (optional), 3)] the format that is in JSON, 4) Sample that limits the number of points.
+*Stat* | [**getStats()**](docs/BlockchainCharts&StatisticsApi.md#getStats) | **GET** | This method retrieves the stats which refer to a summary of blocks and transactions. For example, the hash rate, the total fees, the total number of transactions or mined blocks.
+*Pool* | [**getPools()**](docs/BlockchainCharts&StatisticsApi.md#getPools) | **GET** | This method retrieves information about the mining pools.
+*LinkedHashMap -> List<Exchange>* | [**getRateExchanges()**](docs/Rate.md#getRateExchanges) | **GET** | This method retrieves the value of each existing currency in bitcoins.
+*Rate* | [**getBitcoinExchange()**](docs/Rate.md#getBitcoinExchange) | **GET** | This method retrieves a given currency in bitcoins.
+*Block* | [**getBlockDataInformation()**](docs/BlockChainData.md#getBlockDataInformation)  | **GET** | This method provides the information related to a block matching with its corresponding hash.
+*TransactionData* | [**getTransactionData()**](docs/BlockChainData.md#getTransactionData) | **GET** | This method provides the information from a single transaction with a given hash.
 *Chart* | **getResourcesTransaction()** | **GET** | This method retrieves the transactions regarding the parameter chart type that was specified.
 *Block* | **getBlockInformationfromHeight()** | **GET** | This method retrieves an array of one or more blocks at the height specified as parameter.
 *BitcoinInfo* | **getBitcoinInformationFromAddress()** | **GET** | This method retrieves bitcoin information from a specified address.

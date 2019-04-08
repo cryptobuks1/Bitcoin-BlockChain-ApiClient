@@ -1,0 +1,109 @@
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getBlockDataInformation()**](BlockChainData.md#getBlockDataInformation) | **GET**  | Get information about a block given its hash
+[**getTransactionData()**](BlockChainData.md#getTransactionData) | **GET**  | Get information from a single transaction by providing a hash
+
+<a name="getBlockDataInformation"></a>
+# **getBlockDataInformation**
+> getBlockDataInformation
+
+Get information related to a block according its hash
+
+### Example
+
+```java
+
+// Get information from a block with a specific hash
+
+import java.io.IOException;
+import blockChainInformation.Block;
+import blockChainInformation.BlockChainData;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+
+	public static void main(String[] args) throws IOException, ParseException {
+
+
+		String hash = "0000000000000bae09a7a393a8acded75aa67e46cb81f7acaa5ad94f9eacd103";
+		BlockChainData blockchain = new BlockChainData(hash);
+		Block block = blockchain.getBlockDataInformation();
+
+		// Some examples about how to extract from block of the blockchain i ->
+		System.out.println("Previous block " + block.getPrev_block());
+		System.out.println("Next block " + block.getNext_block().toString());
+		System.out.println("Transactions " + block.getTx().toString());
+		System.out.println("Block" + block.toString());
+		
+	}
+}
+```
+
+### Parameters
+
+The block's hash is included as parameter in the BlockChainData constructor.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **block_hash** | **String**| Hash that corresponds to a block.| Mandatory
+ 
+### Return type
+
+Block
+
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ 
+<a name="getTransactionData"></a>
+# **getTransactionData**
+> getTransactionData
+
+Get information from a single transaction by providing a hash
+
+### Example
+
+```java
+
+import java.io.IOException;
+import org.json.simple.parser.ParseException;
+import blockChainInformation.TransactionData;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+
+
+// Get information from a single transaction by providing the hash
+
+		String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
+		BlockChainData trasnsactionBlock = new BlockChainData(hashTransaction);
+		TransactionData transactionData = trasnsactionBlock.getTransactionData();
+
+		// Some examples about how to extract information about the block ->
+		System.out.println("Transaction hash " + transactionData.getHash());
+		System.out.println("Transaction's weight " + transactionData.getWeight());
+		System.out.println("Transactions' inputs" + transactionData.getInputs());
+		System.out.println("Transactions' outputs" + transactionData.getOut().toString());
+		System.out.println("Transactions" + transactionData.toString());
+	}
+}		
+
+```
+
+### Parameters
+
+The transaction's hash is included as parameter in the BlockChainData constructor.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tx_hash** | **String**| Hash that corresponds to a transaction.| Mandatory
+
+### Return type
+
+TransactionData
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ 
