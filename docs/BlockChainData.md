@@ -6,6 +6,7 @@ Method | HTTP request | Description
 [**getBlockInformationfromHeight()**](BlockChainData.md#getBlockInformationfromHeight) | **GET**  | Get block information of a block from a given height
 [**getBitcoinInformationFromAddress()**](BlockChainData.md#getBitcoinInformationFromAddress) | **GET**  | Get bitcoin information from an address
 [**getBitcoinsMultipleAddresses()**](BlockChainData.md#getBitcoinsMultipleAddresses) | **GET**  | Get bitcoin from multiple addresses
+[**getUnspentOutputs()**](BlockChainData.md#getUnspentOutputs) | **GET**  | Get information (List of UnspentOutput) about the unspent outputs, providing as parameter the address.
 
 <a name="getBlockDataInformation"></a>
 # **getBlockDataInformation**
@@ -288,17 +289,58 @@ public class ApiCallMain {
  
  Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **$address|$address** | **String**| Bitcoin's addresses.| Mandatory
+ **$address$address** (separated by a vertical line) | **String**| Bitcoin's addresses.| Mandatory
 
 ### Return 
 
 BitcoinInfo
 
-List<Object> that returns -> the *AddressBitcoin*, *Wallet*, *Transaction* classes
+List<Object> that returns -> *AddressBitcoin*, *Wallet*, *Transaction* classes
 
 ### HTTP request headers
 
 - **Content-Type**: application/json; charset=utf-8
- 
+
+<a name="getUnspentOutputs"></a>
+# **getUnspentOutputs**
+> getUnspentOutputs
+
+### Example
+
+```java
+
+import java.io.IOException;
+import java.util.List;
+import org.json.simple.parser.ParseException;
+import blockChainInformation.UnspentOutput;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+
+		//Get information about the unspent outputs
+		LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
+		paramsAdressOutputs.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
+		BlockChainData outputSpent = new BlockChainData(paramsAdressOutputs);
+		List<UnspentOutput> unspentOutputList = outputSpent.getUnspentOutputs();
+		System.out.println(unspentOutputList.toString());
+	}
+}
+
+``
+
+### Parameters
+
+ Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address** (multiple addresses are allowed) | **String**| Bitcoin's address.| Mandatory
+
+ ### Return 
+
+List<UnspentOutput> -> list of Unspent class
+
+### HTTP request headers
+
+- **Content-Type**: application/json; charset=utf-8
+
 
  

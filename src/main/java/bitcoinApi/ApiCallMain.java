@@ -137,20 +137,20 @@ public class ApiCallMain {
 		System.out.println("n_tx: " + bitcoinInfo.getN_tx());*/
 		
 		//Get bitcoin's information from multiple addresses
-		LinkedHashMap<String, String> paramsAdresses = new LinkedHashMap<String, String>();
+		/*LinkedHashMap<String, String> paramsAdresses = new LinkedHashMap<String, String>();
 		paramsAdresses.put("active", "1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq|1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
 		BlockChainData bitcoinTwoAddress = new BlockChainData(paramsAdresses);
 		List<Object> multipleAddresses = bitcoinTwoAddress.getBitcoinsMultipleAddresses();
-		System.out.println(multipleAddresses.toString());
+		System.out.println(multipleAddresses.toString());*/
 		
-		/*//Get information about the unspent outputs
+		//Get information about the unspent outputs
 		LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
-		paramsAdressOutputs.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
+		paramsAdressOutputs.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
 		BlockChainData outputSpent = new BlockChainData(paramsAdressOutputs);
-		ArrayList<UnspentOutput> unspentOutputList = outputSpent.getUnspentOutputs();
+		List<UnspentOutput> unspentOutputList = outputSpent.getUnspentOutputs();
 		System.out.println(unspentOutputList.toString());
 
-		//Get information about the balance
+		/*//Get information about the balance
 		LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
 		paramsBalance.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
 		BlockChainData balance = new BlockChainData(paramsBalance);
