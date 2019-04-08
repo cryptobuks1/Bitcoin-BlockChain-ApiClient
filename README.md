@@ -145,7 +145,8 @@ Class | Method | HTTP request | Description
 *Chart* | [**getResourcesTransactionPerSecond()**](docs/BlockchainCharts&StatisticsApi.md#getResourcesTransactionPerSecond) | **GET** | This method retrieves the number of bitcoins transactions per second. The parameters to include are: 1) timespan or duration of the chart, 2) rollingAverage or duration over which the data should be averaged, 3) start or the datatime when the chart starts (optional), 3)] the format that is in JSON, 4) Sample that limits the number of points.
 *Stat* | [**getStats()**](docs/BlockchainCharts&StatisticsApi.md#getStats) | **GET** | This method retrieves the stats which refer to a summary of blocks and transactions. For example, the hash rate, the total fees, the total number of transactions or mined blocks.
 *Pool* | [**getPools()**](docs/BlockchainCharts&StatisticsApi.md#getPools) | **GET** | This method retrieves information about the mining pools.
-*Rate* | [**getBitcoinExchange()**](docs/Rate.md#getBitcoinExchange) | **GET** | This method retrieves the value of each existing currency in bitcoins.
+*LinkedHashMap -> List<Exchange>* | [**getRateExchanges()**](docs/Rate.md#getRateExchanges) | **GET** | This method retrieves the value of each existing currency in bitcoins.
+*Rate* | [**getBitcoinExchange()**](docs/Rate.md#getBitcoinExchange) | **GET** | This method retrieves a given currency in bitcoins.
 *Block* | **getBlockDataInformation()** | **GET** | This method provides the information related to a block matching with its corresponding hash.
 *TransactionData* | **getTransactionData()** | **GET** | This method provides the information from a single transaction with a given hash.
 *Chart* | **getResourcesTransaction()** | **GET** | This method retrieves the transactions regarding the parameter chart type that was specified.

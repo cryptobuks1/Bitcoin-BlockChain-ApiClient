@@ -71,15 +71,15 @@ public class ApiCallMain {
 		// The method getRateExchanges() returns the market prices for each
 		// currency
 
-		UtilMethods util = new UtilMethods();
+		/*UtilMethods util = new UtilMethods();
 		LinkedHashMap<String, LinkedHashMap<String, Object>> output3 = new LinkedHashMap<String, LinkedHashMap<String, Object>>();
 		ExchangeRate exchange = new ExchangeRate();
 		output3 = exchange.getRateExchanges();
 		//System.out.println(output3.toString());
 		List<Exchange> exchanges = util.returnToExchangeRate(output3);
-		System.out.println(exchanges.get(11).getCurrencyValue());
+		System.out.println(exchanges.get(11).getCurrencyValue());*/
 
-		/*// The method getRateExchanges() returns the exchange rates currency X
+		/// The method getRateExchanges() returns the exchange rates currency X
 		// -> bitcoin. The parameters to add are the currency (EUR)
 		// and its value. The method returns a float with the ratio of the
 		// exchange.
@@ -87,14 +87,14 @@ public class ApiCallMain {
 		LinkedHashMap<String, String> params4 = new LinkedHashMap<String, String>();
 		params4.put("currency", "EUR");
 		params4.put("value", "5000");
-		ExchangeRates exchange2 = new ExchangeRates(params4);
+		ExchangeRate exchange2 = new ExchangeRate(params4);
 		Rate rate = exchange2.getBitcoinExchange();
 		System.out.println(rate.toString());
 		
 
 		// Get information from a block with a specific hash
 
-		String hash = "0000000000000bae09a7a393a8acded75aa67e46cb81f7acaa5ad94f9eacd103";
+		/*String hash = "0000000000000bae09a7a393a8acded75aa67e46cb81f7acaa5ad94f9eacd103";
 		BlockChainData blockchain = new BlockChainData(hash);
 		Block block = blockchain.getBlockDataInformation();
 
@@ -102,12 +102,12 @@ public class ApiCallMain {
 		System.out.println("Previous block " + block.getPrev_block());
 		System.out.println("Next block " + block.getNext_block().toString());
 		System.out.println("Transactions " + block.getTx().toString());
-		System.out.println("Block" + block.toString());
+		System.out.println("Block" + block.toString());*/
 		
 
 		// Get information from a single transaction by providing the hash
 
-		String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
+		/*String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
 		BlockChainData trasnsactionBlock = new BlockChainData(hashTransaction);
 		TransactionData transactionData = trasnsactionBlock.getTransactionData();
 
