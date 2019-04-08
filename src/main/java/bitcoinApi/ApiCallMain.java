@@ -152,11 +152,11 @@ public class ApiCallMain {
 
 		
 		//Get information about the latest block
-		BlockChainData latestBlock = new BlockChainData();
+		/*BlockChainData latestBlock = new BlockChainData();
 		Block lastblock = latestBlock.getLastBlock();
 		System.out.println(lastblock.toString());
 		
-		/*//Get unconfirmed transactions
+		//Get unconfirmed transactions
 		LinkedHashMap<String, String> paramsTransactions = new LinkedHashMap<String, String>();
 		paramsTransactions.put("format","json");
 		BlockChainData transactions = new BlockChainData(paramsTransactions);
@@ -171,21 +171,29 @@ public class ApiCallMain {
 		ArrayList<Block> blocks = blockPool.getBlocksfromParameter();
 		System.out.println(blocks.toString());
 		
-
-		//Get information about the balance
-		LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
-		paramsBalance.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
-		BlockChainData balance = new BlockChainData(paramsBalance);
-		ArrayList<Balance> balanceList = balance.getBalance();
-		System.out.println(balanceList.toString());
 		
 		//Get blocks from a specific pool (e.g., Bitclub Network)
+		/*LinkedHashMap<String, String> paramsPools = new LinkedHashMap<String, String>();
+		paramsPools.put("format", "json");
+		String poolName = "BitClub%20Network";
+		BlockChainData blockPool = new BlockChainData(paramsPools, poolName);
+		List<Block> blocks = blockPool.getBlocksfromParameter();
+		System.out.println(blocks.toString());
+		
+		//Get blocks from a specific day (e.g., Bitclub Network)
 		LinkedHashMap<String, String> paramsTime = new LinkedHashMap<String, String>();
 		paramsTime.put("timespan", "1day");
 		paramsTime.put("format","json");
 		BlockChainData blockChain = new BlockChainData(paramsTime);
-		ArrayList<Block> blocksfromASpecificTime = blockChain.getBlocksfromParameter();
+		List<Block> blocksfromASpecificTime = blockChain.getBlocksfromParameter();
 		System.out.println(blocksfromASpecificTime.toString());*/
+		
+		//Get information about the balance
+		LinkedHashMap<String, String> paramsBalance = new LinkedHashMap<String, String>();
+		paramsBalance.put("active", "1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK|1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq");
+		BlockChainData balance = new BlockChainData(paramsBalance);
+		List<Balance> balanceList = balance.getBalance();
+		System.out.println(balanceList.toString());
 
 	}
 }
