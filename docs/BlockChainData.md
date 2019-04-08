@@ -2,6 +2,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getBlockDataInformation()**](BlockChainData.md#getBlockDataInformation) | **GET**  | Get information about a block given its hash
 [**getTransactionData()**](BlockChainData.md#getTransactionData) | **GET**  | Get information from a single transaction by providing a hash
+[**getResourcesTransaction()**](BlockChainData.md#getResourcesTransaction) | **GET**  | Get the transactions according to the  specified chart type.
 
 <a name="getBlockDataInformation"></a>
 # **getBlockDataInformation**
@@ -76,6 +77,11 @@ public class ApiCallMain {
 
 // Get information from a single transaction by providing the hash
 
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+
+
 		String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
 		BlockChainData trasnsactionBlock = new BlockChainData(hashTransaction);
 		TransactionData transactionData = trasnsactionBlock.getTransactionData();
@@ -106,4 +112,53 @@ TransactionData
 ### HTTP request headers
 
  - **Content-Type**: application/json; charset=utf-8
+ 
+<a name="getResourcesTransaction"></a>
+# **getResourcesTransaction**
+> getResourcesTransaction
+
+Get the transactions according to the  specified chart type.
+
+### Example
+
+```java
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+	
+	import java.io.IOException;
+	import org.json.simple.parser.ParseException;
+	import blockChainInformation.TransactionData;
+	import statistics.Chart;
+	
+	
+	// Retrieve charts (type=transaction per second).
+
+		String chartype2 = "transactions-per-second";
+		Statistic statistic4 = new Statistic(chartype2);
+		Chart graphic2 = statistic4.getResourcesTransaction();
+		System.out.println(graphic2.toString());
+
+	}
+}
+
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **chart-type** | **String**| Type of chart.| Mandatory
+ 
+### Return 
+
+Chart
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ 
+
+
  
