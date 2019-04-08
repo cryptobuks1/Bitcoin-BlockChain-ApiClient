@@ -84,13 +84,13 @@ public class ApiCallMain {
 		// and its value. The method returns a float with the ratio of the
 		// exchange.
 
-		LinkedHashMap<String, String> params4 = new LinkedHashMap<String, String>();
+		/*LinkedHashMap<String, String> params4 = new LinkedHashMap<String, String>();
 		params4.put("currency", "EUR");
 		params4.put("value", "5000");
 		ExchangeRate exchange2 = new ExchangeRate(params4);
 		Rate rate = exchange2.getBitcoinExchange();
 		System.out.println(rate.toString());
-		
+		*/
 
 		// Get information from a block with a specific hash
 
@@ -107,7 +107,7 @@ public class ApiCallMain {
 
 		// Get information from a single transaction by providing the hash
 
-		/*String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
+		String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
 		BlockChainData trasnsactionBlock = new BlockChainData(hashTransaction);
 		TransactionData transactionData = trasnsactionBlock.getTransactionData();
 
@@ -119,7 +119,7 @@ public class ApiCallMain {
 		System.out.println("Transactions" + transactionData.toString());
 		
 		///Retrieve information from a block given its height
-		String height = "154595";
+		/*String height = "154595";
 		LinkedHashMap<String, String> paramsHeight = new LinkedHashMap<String, String>();
 		paramsHeight.put("format", "json");
 		BlockChainData trasnsactionBlockHeight = new BlockChainData(paramsHeight, height);

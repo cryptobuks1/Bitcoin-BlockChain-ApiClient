@@ -148,7 +148,7 @@ Class | Method | HTTP request | Description
 *LinkedHashMap -> List<Exchange>* | [**getRateExchanges()**](docs/Rate.md#getRateExchanges) | **GET** | This method retrieves the value of each existing currency in bitcoins.
 *Rate* | [**getBitcoinExchange()**](docs/Rate.md#getBitcoinExchange) | **GET** | This method retrieves a given currency in bitcoins.
 *Block* | [**getBlockDataInformation()**](docs/BlockChainData.md#getBlockDataInformation)  | **GET** | This method provides the information related to a block matching with its corresponding hash.
-*TransactionData* | **getTransactionData()** | **GET** | This method provides the information from a single transaction with a given hash.
+*TransactionData* | [**getTransactionData()**](docs/BlockChainData.md#getTransactionData) | **GET** | This method provides the information from a single transaction with a given hash.
 *Chart* | **getResourcesTransaction()** | **GET** | This method retrieves the transactions regarding the parameter chart type that was specified.
 *Block* | **getBlockInformationfromHeight()** | **GET** | This method retrieves an array of one or more blocks at the height specified as parameter.
 *BitcoinInfo* | **getBitcoinInformationFromAddress()** | **GET** | This method retrieves bitcoin information from a specified address.
