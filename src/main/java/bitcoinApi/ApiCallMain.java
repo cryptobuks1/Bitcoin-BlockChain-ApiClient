@@ -118,32 +118,32 @@ public class ApiCallMain {
 		System.out.println("Transactions" + transactionData.toString());*/
 		
 		///Retrieve information from a block given its height
-		String height = "154595";
+		/*String height = "154595";
 		LinkedHashMap<String, String> paramsHeight = new LinkedHashMap<String, String>();
 		paramsHeight.put("format", "json");
 		BlockChainData trasnsactionBlockHeight = new BlockChainData(paramsHeight, height);
 		List<Block> listBlocks = trasnsactionBlockHeight.getBlockInformationfromHeight();
-		System.out.println(listBlocks.get(0).getTx().toString());
+		System.out.println(listBlocks.get(0).getTx().toString());*/
 		
-		/*//Retrieve information about a bitcoing given its address
-		String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
+		//Retrieve information about a bitcoing given its address
+		/*String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
 		BlockChainData bitcoinAddress = new BlockChainData(address);
 		BitcoinInfo bitcoinInfo = bitcoinAddress.getBitcoinInformationFromAddress();
-		System.out.println(bitcoinInfo.toString());
+		System.out.println(bitcoinInfo.toString());*/
 		
-		// Array of transactions referring to a bitcoin
+		/*// Array of transactions referring to a bitcoin
 		System.out.println("bitcoininfo: " + bitcoinInfo.toString());
 		// Total number of Transactions:
-		System.out.println("n_tx: " + bitcoinInfo.getN_tx());
+		System.out.println("n_tx: " + bitcoinInfo.getN_tx());*/
 		
 		//Get bitcoin's information from multiple addresses
 		LinkedHashMap<String, String> paramsAdresses = new LinkedHashMap<String, String>();
 		paramsAdresses.put("active", "1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq|1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
 		BlockChainData bitcoinTwoAddress = new BlockChainData(paramsAdresses);
-		ArrayList<Object> multipleAddresses = bitcoinTwoAddress.getBitcoinsMultipleAddresses();
+		List<Object> multipleAddresses = bitcoinTwoAddress.getBitcoinsMultipleAddresses();
 		System.out.println(multipleAddresses.toString());
 		
-		//Get information about the unspent outputs
+		/*//Get information about the unspent outputs
 		LinkedHashMap<String, String> paramsAdressOutputs = new LinkedHashMap<String, String>();
 		paramsAdressOutputs.put("active","1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
 		BlockChainData outputSpent = new BlockChainData(paramsAdressOutputs);

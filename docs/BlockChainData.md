@@ -4,7 +4,8 @@ Method | HTTP request | Description
 [**getTransactionData()**](BlockChainData.md#getTransactionData) | **GET**  | Get information from a single transaction by providing a hash
 [**getResourcesTransaction()**](BlockChainData.md#getResourcesTransaction) | **GET**  | Get the transactions according to the  specified chart type.
 [**getBlockInformationfromHeight()**](BlockChainData.md#getBlockInformationfromHeight) | **GET**  | Get block information of a block from a given height
-
+[**getBitcoinInformationFromAddress()**](BlockChainData.md#getBitcoinInformationFromAddress) | **GET**  | Get bitcoin information from an address
+[**getBitcoinsMultipleAddresses()**](BlockChainData.md#getBitcoinsMultipleAddresses) | **GET**  | Get bitcoin from multiple addresses
 
 <a name="getBlockDataInformation"></a>
 # **getBlockDataInformation**
@@ -206,5 +207,98 @@ List of Blocks
 ### HTTP request headers
 
  - **Content-Type**: application/json; charset=utf-8
+ 
+<a name="getBitcoinInformationFromAddress"></a>
+# **getBitcoinInformationFromAddress**
+> getBitcoinInformationFromAddress
+
+Get bitcoin information from an address
+
+### Example
+
+
+```java
+
+import java.io.IOException;
+import org.json.simple.parser.ParseException;
+import bitcoinInformation.BitcoinInfo;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+		
+
+		String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
+		BlockChainData bitcoinAddress = new BlockChainData(address);
+		BitcoinInfo bitcoinInfo = bitcoinAddress.getBitcoinInformationFromAddress();
+		System.out.println(bitcoinInfo.toString());
+		// List of transactions referring to a bitcoin
+		System.out.println("bitcoininfo: " + bitcoinInfo.toString());
+		// Total number of Transactions:
+		System.out.println("n_tx: " + bitcoinInfo.getN_tx());
+	}
+}
+
+```
+ ### Parameters
+
+ 
+ Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bitcoin_address** | **String**| Bitcoin's address.| Mandatory
+ 
+### Return 
+
+BitcoinInfo
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ 
+
+<a name="getBitcoinsMultipleAddresses"></a>
+# **getBitcoinsMultipleAddresses**
+> getBitcoinsMultipleAddresses
+ 
+Get bitcoin from multiple addresses
+
+### Example
+
+```java
+
+import java.io.IOException;
+import org.json.simple.parser.ParseException;
+import blockChainInformation.BlockChainData;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+	
+		LinkedHashMap<String, String> paramsAdresses = new LinkedHashMap<String, String>();
+		paramsAdresses.put("active", "1A8JiWcwvpY7tAopUkSnGuEYHmzGYfZPiq|1MDUoxL1bGvMxhuoDYx6i11ePytECAk9QK");
+		BlockChainData bitcoinTwoAddress = new BlockChainData(paramsAdresses);
+		List<Object> multipleAddresses = bitcoinTwoAddress.getBitcoinsMultipleAddresses();
+		System.out.println(multipleAddresses.toString());
+	
+	}
+}
+
+```
+ ### Parameters
+ 
+ Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **$address|$address** | **String**| Bitcoin's addresses.| Mandatory
+
+### Return 
+
+BitcoinInfo
+
+List<Object> that returns -> the *AddressBitcoin*, *Wallet*, *Transaction* classes
+
+### HTTP request headers
+
+- **Content-Type**: application/json; charset=utf-8
+ 
 
  
