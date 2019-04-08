@@ -3,7 +3,6 @@ Method | HTTP request | Description
 [**getRateExchanges()**](Rate.md#getRateExchanges) | **GET**  | Get a JSON object with the currency codes as keys. "15m" is the 15 minutes delayed market price, "last" is the most recent market price, "symbol" is the currency symbol.
 [**getBitcoinExchange()**](Rate.md#getBitcoinExchange) | **GET**  | Get a given currency in bitcoins.
 
-
 <a name="getRateExchanges"></a>
 # **getRateExchanges**
 > getRateExchanges
