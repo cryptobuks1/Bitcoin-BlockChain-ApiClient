@@ -44,10 +44,10 @@ public class ApiCallMain {
 		
 		// Retrieve charts (type=transaction per second).
 
-		String chartype2 = "transactions-per-second";
+		/*String chartype2 = "transactions-per-second";
 		Statistic statistic4 = new Statistic(chartype2);
 		Chart graphic2 = statistic4.getResourcesTransaction();
-		System.out.println(graphic2.toString());
+		System.out.println(graphic2.toString());*/
 
 		// The method getStats returns the summary of bitcoin statistics
 
@@ -106,7 +106,7 @@ public class ApiCallMain {
 
 		// Get information from a single transaction by providing the hash
 
-		String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
+		/*String hashTransaction = "b6f6991d03df0e2e04dafffcd6bc418aac66049e2cd74b80f14ac86db1e3f0da";
 		BlockChainData trasnsactionBlock = new BlockChainData(hashTransaction);
 		TransactionData transactionData = trasnsactionBlock.getTransactionData();
 
@@ -115,17 +115,17 @@ public class ApiCallMain {
 		System.out.println("Transaction's weight " + transactionData.getWeight());
 		System.out.println("Transactions' inputs" + transactionData.getInputs());
 		System.out.println("Transactions' outputs" + transactionData.getOut().toString());
-		System.out.println("Transactions" + transactionData.toString());
+		System.out.println("Transactions" + transactionData.toString());*/
 		
 		///Retrieve information from a block given its height
-		/*String height = "154595";
+		String height = "154595";
 		LinkedHashMap<String, String> paramsHeight = new LinkedHashMap<String, String>();
 		paramsHeight.put("format", "json");
 		BlockChainData trasnsactionBlockHeight = new BlockChainData(paramsHeight, height);
-		ArrayList<Block> listBlocks = trasnsactionBlockHeight.getBlockInformationfromHeight();
+		List<Block> listBlocks = trasnsactionBlockHeight.getBlockInformationfromHeight();
 		System.out.println(listBlocks.get(0).getTx().toString());
 		
-		//Retrieve information about a bitcoing given its address
+		/*//Retrieve information about a bitcoing given its address
 		String address = "1AJbsFZ64EpEfS5UAjAfcUG8pH8Jn3rn1F";
 		BlockChainData bitcoinAddress = new BlockChainData(address);
 		BitcoinInfo bitcoinInfo = bitcoinAddress.getBitcoinInformationFromAddress();

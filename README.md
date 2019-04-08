@@ -150,7 +150,7 @@ Class | Method | HTTP request | Description
 *Block* | [**getBlockDataInformation()**](docs/BlockChainData.md#getBlockDataInformation)  | **GET** | This method provides the information related to a block matching with its corresponding hash.
 *TransactionData* | [**getTransactionData()**](docs/BlockChainData.md#getTransactionData) | **GET** | This method provides the information from a single transaction with a given hash.
 *Chart* | [**getResourcesTransaction()**](docs/BlockChainData.md#getResourcesTransaction) | **GET** | This method retrieves the transactions regarding the parameter chart type that was specified.
-*Block* | **getBlockInformationfromHeight()** | **GET** | This method retrieves an array of one or more blocks at the height specified as parameter.
+List of *Block* | **getBlockInformationfromHeight()** | **GET** | This method retrieves an array of one or more blocks at the height specified as parameter.
 *BitcoinInfo* | **getBitcoinInformationFromAddress()** | **GET** | This method retrieves bitcoin information from a specified address.
 *AddressBitcoin*, *Wallet*, *Transaction* | **getBitcoinsMultipleAddresses()** | **GET** | This method retrieves bitcoin information (List of AddressBitcoin, Wallet, Transaction) putting as parameter multiple addresses.
 *UnspentOutput* | **getUnspentOutputs()** | **GET** | This method retrieves information (List of UnspentOutput) about the unspent outputs by providing as parameter the address.

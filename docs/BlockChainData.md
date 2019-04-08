@@ -3,6 +3,8 @@ Method | HTTP request | Description
 [**getBlockDataInformation()**](BlockChainData.md#getBlockDataInformation) | **GET**  | Get information about a block given its hash
 [**getTransactionData()**](BlockChainData.md#getTransactionData) | **GET**  | Get information from a single transaction by providing a hash
 [**getResourcesTransaction()**](BlockChainData.md#getResourcesTransaction) | **GET**  | Get the transactions according to the  specified chart type.
+[**getBlockInformationfromHeight()**](BlockChainData.md#getBlockInformationfromHeight) | **GET**  | Get block information of a block from a given height
+
 
 <a name="getBlockDataInformation"></a>
 # **getBlockDataInformation**
@@ -123,15 +125,18 @@ Get the transactions according to the  specified chart type.
 
 ```java
 
+import java.io.IOException;
+import org.json.simple.parser.ParseException;
+import statistics.Chart;
+import statistics.Statistic;
+
 public class ApiCallMain {
 	public static void main(String[] args) throws IOException, ParseException {
 	
 	import java.io.IOException;
 	import org.json.simple.parser.ParseException;
-	import blockChainInformation.TransactionData;
 	import statistics.Chart;
-	
-	
+
 	// Retrieve charts (type=transaction per second).
 
 		String chartype2 = "transactions-per-second";
@@ -141,7 +146,6 @@ public class ApiCallMain {
 
 	}
 }
-
 
 ```
 
@@ -157,8 +161,50 @@ Chart
 
 ### HTTP request headers
 
- - **Content-Type**: application/json; charset=utf-8
+- **Content-Type**: application/json; charset=utf-8
  
+ <a name="getBlockInformationfromHeight"></a>
+# **getBlockInformationfromHeight**
+> getBlockInformationfromHeight
 
+Get block information of a block from a given height
+
+### Example
+
+```java
+
+import java.io.IOException;
+import java.util.LinkedHashMap;
+import org.json.simple.parser.ParseException;
+import blockChainInformation.Block;
+import blockChainInformation.BlockChainData;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+		
+		String height = "154595";
+		LinkedHashMap<String, String> paramsHeight = new LinkedHashMap<String, String>();
+		paramsHeight.put("format", "json");
+		BlockChainData trasnsactionBlockHeight = new BlockChainData(paramsHeight, height);
+		List<Block> listBlocks = trasnsactionBlockHeight.getBlockInformationfromHeight();
+		System.out.println(listBlocks.get(0).getTx().toString());
+	}
+}
+
+```
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **block_height** | **String**| Block's height.| Mandatory
+ **format** | **String**| Formar.| Optional
+ 
+ ### Return 
+
+List of Blocks
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
 
  
