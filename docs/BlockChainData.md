@@ -385,6 +385,52 @@ Block
 
 - **Content-Type**: application/json; charset=utf-8
 
+
+<a name="getUnconfirmedTransactions"></a>
+# **getUnconfirmedTransactions**
+> getUnconfirmedTransactions
+ 
+Get bitcoin from multiple addresses
+
+### Example
+
+```java
+
+import java.io.IOException;
+import org.json.simple.parser.ParseException;
+import blockChainInformation.BlockChainData;
+import blockChainInformation.Transaction;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+public class ApiCallMain {
+	public static void main(String[] args) throws IOException, ParseException {
+	
+		LinkedHashMap<String, String> paramsTransactions = new LinkedHashMap<String, String>();
+		paramsTransactions.put("format", "json");
+		BlockChainData transactions = new BlockChainData(paramsTransactions);
+		List<Transaction> unconfirmedTransactions = transactions.getUnconfirmedTransactions();
+		System.out.println(unconfirmedTransactions.toString());
+	
+	}
+}
+
+```
+ ### Parameters
+ 
+ Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format**  | **String**| JSON | Optional
+
+### Return 
+
+List of Transactions
+
+### HTTP request headers
+
+- **Content-Type**: application/json; charset=utf-8
+
+
 <a name="getBlocksfromParameter"></a>
 # **getBlocksfromParameter**
 > getBlocksfromParameter

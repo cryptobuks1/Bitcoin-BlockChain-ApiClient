@@ -24,7 +24,7 @@ public class ApiCallMain {
 
 	public static void main(String[] args) throws IOException, ParseException {
 
-		// Set parameters. In order to get the bitcoins transactions per second,
+		/*// Set parameters. In order to get the bitcoins transactions per second,
 		// the parameters to include are
 		// the timespan and the rollingAverage, which correspond to 5 weeks and
 		// 8 hours, respectively.
@@ -150,7 +150,7 @@ public class ApiCallMain {
 		// Get information about the latest block
 		BlockChainData latestBlock = new BlockChainData();
 		Block lastblock = latestBlock.getLastBlock();
-		System.out.println(lastblock.toString());
+		System.out.println(lastblock.toString());*/
 
 		// Get unconfirmed transactions
 		LinkedHashMap<String, String> paramsTransactions = new LinkedHashMap<String, String>();
@@ -159,7 +159,7 @@ public class ApiCallMain {
 		List<Transaction> unconfirmedTransactions = transactions.getUnconfirmedTransactions();
 		System.out.println(unconfirmedTransactions.toString());
 
-		// Get blocks from a specific pool (e.g., Bitclub Network)
+		/*// Get blocks from a specific pool (e.g., Bitclub Network)
 		LinkedHashMap<String, String> paramsPools = new LinkedHashMap<String, String>();
 		paramsPools.put("format", "json");
 		String poolName = "BitClub%20Network";
@@ -181,6 +181,6 @@ public class ApiCallMain {
 		BlockChainData balance = new BlockChainData(paramsBalance);
 		List<Balance> balanceList = balance.getBalance();
 		System.out.println(balanceList.toString());
-
+*/
 	}
 }
