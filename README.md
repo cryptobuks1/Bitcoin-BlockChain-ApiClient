@@ -36,8 +36,8 @@ You can add this dependency to your pom.xml file:
 ```xml
 <dependency>
   <groupId>com.github.mjggodoy</groupId>
-  <artifactId>com.github.mjggodoy</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>api-bitcoin-java</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
 </dependency>
 ```
 
